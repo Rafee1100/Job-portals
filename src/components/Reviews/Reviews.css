@@ -1,0 +1,22 @@
+.client-pic{
+    width:80px;
+    height: 80px;
+    border-radius:50%;
+}
+.review-area{
+    background-color: rgb(235, 185, 20);
+    padding: 25px;
+    border-radius: 15px;
+}
+.client-designation{
+    color: gray;
+    font-weight: 500;
+}
+@media screen and (max-width: 600px) {
+    .review-area{
+        margin: 5px 2px;
+        padding: 5px 3px;
+        display: block;
+        width: 90%;
+    }
+}

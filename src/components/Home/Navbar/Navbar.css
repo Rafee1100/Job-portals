@@ -1,0 +1,13 @@
+.nav-img{
+    height: 80px;
+    width: 80px;
+}
+.nav-link{
+    font-weight:600;
+}
+#employer-btn{
+    background-color: orange;
+    padding: 8px 15px;
+    border-radius: 8px;
+    color: white;
+}

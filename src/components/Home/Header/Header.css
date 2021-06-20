@@ -1,0 +1,21 @@
+.header-area{
+    background-color: rgb(238, 176, 33);
+    padding: 45px 0px;
+}
+.header-intro{
+    color: gray;
+    font-weight: 500;
+    padding: 10px 0px;
+}
+.toJob{
+    border: none;
+    background-color: rgb(119, 216, 240);
+    padding: 8px 25px;
+    border-radius: 10px;
+}
+.second-part img{
+    border-radius: 50%;
+    width: 60%;
+    height: 100%;
+    padding: 45px 20px;
+}
