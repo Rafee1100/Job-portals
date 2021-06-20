@@ -11,6 +11,7 @@ import Login from './components/Login/Login';
 import { createContext, useState } from 'react';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import AddJob from './components/AddJob/AddJob';
+import Employer from './components/Employer/Employer';
 
 export const UserContext = createContext()
 
@@ -37,7 +38,7 @@ function App() {
               <AddJob/>
             </Route>
             <PrivateRoute path="/employer">
-              <Login />
+              <Employer/>
             </PrivateRoute>
           </Switch>
         </Router>

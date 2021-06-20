@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './AddJob.css'
 import axios from 'axios';
 import { useForm } from "react-hook-form";
+import Navbar from '../Home/Navbar/Navbar';
 
 
 const AddJob = () => {
@@ -78,7 +79,8 @@ const AddJob = () => {
     }
 
     return (
-        <div className="" >
+        <div >
+            <Navbar/>
             <h2 className="text-center">Add Job</h2>
             <div className="container p-4" style={{backgroundColor: "#F4FDFB" }}>
                 <div className="">
