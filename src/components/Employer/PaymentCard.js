@@ -58,6 +58,7 @@ const PaymentCard = (props) => {
             body: JSON.stringify(getUserInfo)
         })
             .then(res => console.log('server side response', res))
+            alert("Payment Done & Proceed to post job")
     };
 
 
