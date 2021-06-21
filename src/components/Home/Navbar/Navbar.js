@@ -10,6 +10,7 @@ const Navbar = () => {
         isSignedInUser = true
     }
     const [isAdmin, setIsAdmin] = useState(false)
+    const [isEmployer,setIsEmployer]=useState(false)
     const { photoURL } = loggedInUser
 
     useEffect(() => {
@@ -22,7 +23,18 @@ const Navbar = () => {
             .then(data => setIsAdmin(data));
     }, [])
 
-    console.log(isAdmin)
+    useEffect(() => {
+        fetch('http://localhost:8000/isemployer', {
+            method: 'POST',
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify({ email: loggedInUser.email })
+        })
+            .then(res => res.json())
+            .then(data => setIsEmployer(data));
+    }, [])
+
+
+    console.log(isEmployer)
     return (
         <div className="container">
             <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
@@ -46,7 +58,9 @@ const Navbar = () => {
                                 }
                             </li>
                             <li class="nav-item me-3">
-                                <Link class="nav-link" id="employer-btn" to="/employer">For Employer</Link>
+                                {
+                                  isEmployer ? <Link to="/addjob" className="nav-link employer-btn" >For Employer</Link>:<Link className="nav-link employer-btn" to="/employer">For Employer</Link>
+                                }
                             </li>
                         </ul>
                     </div>
