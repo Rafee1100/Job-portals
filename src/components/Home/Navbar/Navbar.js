@@ -65,6 +65,9 @@ const Navbar = () => {
                             <li class="nav-item me-3">
                                 {isAdmin ? <Link class="nav-link"  to="/admin">Admin Dashboard</Link>:null}
                             </li>
+                            <li class="nav-item me-3">
+                                {isAdmin ? <Link class="nav-link"  to="/addadmin">Add Admin</Link>:null}
+                            </li>
                         </ul>
                     </div>
                 </div>

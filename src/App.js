@@ -16,6 +16,7 @@ import JobApply from './JobApply/JobApply';
 import Navbar from './components/Home/Navbar/Navbar';
 import CheckOutJob from './JobApply/CheckOut/CheckOutJob';
 import Admin from './components/Admin/Admin';
+import AddAdmin from './components/Admin/AddAdmin';
 
 
 export const UserContext = createContext()
@@ -53,9 +54,12 @@ function App() {
               <Navbar/>
               <CheckOutJob/>
             </Route>
-            <Route path="/admin">
+            <PrivateRoute path="/admin">
               <Admin/>
-            </Route>
+            </PrivateRoute>
+            <PrivateRoute path="/addadmin">
+              <AddAdmin/>
+            </PrivateRoute>
           </Switch>
         </Router>
       </div>
