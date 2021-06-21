@@ -5,7 +5,6 @@ import { UserContext } from '../App';
 const JobApply = () => {
     const { id } = useParams()
     const [jobDes, setJobDes] = useState([])
-    const [loggedInUser] = useContext(UserContext)
     useEffect(() => {
         const url = `http://localhost:8000/job/${id}`
         console.log(url)

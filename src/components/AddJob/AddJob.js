@@ -15,6 +15,7 @@ const AddJob = () => {
     const [postedBy, setPostedBy] = useState(null);
     const [jobType, setJobType] = useState(null);
     const [location, setLocation] = useState(null);
+    const [status,setStatus]= useState(null)
 
     const onSubmit = data => {
         const jobData = {
@@ -23,10 +24,11 @@ const AddJob = () => {
             companyName: companyName,
             jobDescription: jobDescription,
             jobType: jobType,
-            location:location,
-            postedBy:postedBy
+            location: location,
+            postedBy: postedBy,
+            status:status
         };
-        const url = `http://localhost:8000/addJob`;
+        const url = `http://localhost:8000/addApproveJob`;
 
         console.log(jobData)
         fetch(url, {
@@ -37,9 +39,11 @@ const AddJob = () => {
             body: JSON.stringify(jobData)
         })
             .then(res => console.log('server side response', res))
+            alert("Your Record is taken and waiting for admin approval")
     };
 
     const handleChange = (e) => {
+        e.preventDefault()
         if (e.target.name === 'title') {
             setJobTitle(e.target.value)
         }
@@ -58,6 +62,9 @@ const AddJob = () => {
         if (e.target.name === 'job-type') {
             setJobType(e.target.value)
         }
+        if(e.target.name === 'status'){
+            setStatus(e.target.defaultValue)
+        }
 
     }
 
@@ -68,7 +75,7 @@ const AddJob = () => {
         logoData.append('image', event.target.files[0]);
 
         axios.post('https://api.imgbb.com/1/upload',
-        logoData)
+            logoData)
             .then(function (response) {
                 setLogo(response.data.data.display_url);
             })
@@ -80,39 +87,45 @@ const AddJob = () => {
 
     return (
         <div >
-            <Navbar/>
+            <Navbar />
             <h2 className="text-center">Add Job</h2>
-            <div className="container p-4" style={{backgroundColor: "#F4FDFB" }}>
+            <div className="container p-4" style={{ backgroundColor: "#F4FDFB" }}>
                 <div className="">
-                    <form  onSubmit={handleSubmit(onSubmit)}>
+                    <form onSubmit={handleSubmit(onSubmit)}>
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Job Title</label>
-                            <input type="text" class="form-control" name="title"  aria-describedby="emailHelp"  onChange={handleChange}  />
+                            <input type="text" class="form-control" name="title" aria-describedby="emailHelp" onChange={handleChange} />
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Company Name</label>
-                            <input type="text" class="form-control" name="company-name" aria-describedby="emailHelp"  onChange={handleChange} />
+                            <input type="text" class="form-control" name="company-name" aria-describedby="emailHelp" onChange={handleChange} />
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Job Description</label>
-                            <input type="text" class="form-control" name="job-description" aria-describedby="emailHelp"  onChange={handleChange} />
+                            <input type="text" class="form-control" name="job-description" aria-describedby="emailHelp" onChange={handleChange} />
                         </div>
                         <div class="input-group mb-3">
-                            <input type="file" class="form-control" id="inputGroupFile02"  onChange={handleImageUpload} />
+                            <input type="file" class="form-control" id="inputGroupFile02" onChange={handleImageUpload} />
                             <label class="input-group-text" name="logo" for="inputGroupFile02">Upload</label>
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Location</label>
-                            <input type="text" class="form-control" name="location"  aria-describedby="emailHelp"  onChange={handleChange} />
+                            <input type="text" class="form-control" name="location" aria-describedby="emailHelp" onChange={handleChange} />
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Posted By</label>
-                            <input type="text" class="form-control" name="posted-by"  aria-describedby="emailHelp"  onChange={handleChange} />
+                            <input type="text" class="form-control" name="posted-by" aria-describedby="emailHelp" onChange={handleChange} />
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Job Type</label>
-                            <input type="text" class="form-control" name="job-type" aria-describedby="emailHelp"  onChange={handleChange} />
+                            <input type="text" class="form-control" name="job-type" aria-describedby="emailHelp" onChange={handleChange} />
                         </div>
+                        
+                        <div class="mb-3">
+                            <label for="disabledTextInput" class="form-label">Status</label>
+                            <input type="text" id="disabledTextInput" name="status" class="form-control" defaultValue="Pending" disabled/>
+                        </div>
+                        
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
                 </div>
