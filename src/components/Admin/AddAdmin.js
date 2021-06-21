@@ -8,7 +8,7 @@ const AddAdmin = () => {
         const adminData = {
             email: email,
         };
-        const url = `http://localhost:8000/addadmin`;
+        const url = `https://nameless-dusk-73584.herokuapp.com/addadmin`;
 
         console.log(adminData)
         fetch(url, {
