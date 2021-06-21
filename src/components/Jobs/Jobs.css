@@ -3,8 +3,53 @@
 }
 .job-area{
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(4,1fr);
 }
+
+.search-box input{
+    width: 50%;
+    margin: auto;
+    display: block;
+    border-radius: 8px;
+    border: 2px solid greenyellow;
+    padding: 5px 8px;
+}
+.paginationBttns {
+    width: 80%;
+    height: 40px;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .paginationBttns a {
+    text-decoration: none;
+    padding: 10px;
+    margin: 8px;
+    border-radius: 5px;
+    border: 1px solid #42f051;
+    color: black;
+    cursor: pointer;
+  }
+  
+  .paginationBttns a:hover {
+    color: black;
+    background-color: orange;
+    border: 1px solid orange;
+  }
+  
+  .paginationActive a {
+    color: white;
+    font-weight: bold;
+    background-color: skyblue;
+
+  }
+  
+  .paginationDisabled a {
+    color: white;
+    background-color: #59f688;
+  }
+
 @media only screen and (max-width: 600px) {
     .job-area{
         display: grid;

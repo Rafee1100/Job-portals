@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
 import { Link } from 'react-router-dom';
 import './PaymentCard.css'
+import Navbar from'../Home/Navbar/Navbar'
 
 
 const PaymentCard = (props) => {
@@ -62,6 +63,8 @@ const PaymentCard = (props) => {
 
 
     return (
+        <div>
+            <Navbar/>
         <div className="container">
             <h2>Join as an employer</h2>
             <form onSubmit={handleSubmit}>
@@ -87,6 +90,7 @@ const PaymentCard = (props) => {
                     Pay
                 </button>
             </form>
+        </div>
         </div>
     );
 };
