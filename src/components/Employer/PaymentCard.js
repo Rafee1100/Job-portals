@@ -50,7 +50,7 @@ const PaymentCard = (props) => {
         console.log(getUserInfo)
 
 
-        const url = `http://localhost:8000/addemployer`;
+        const url = `https://nameless-dusk-73584.herokuapp.com/addemployer`;
         fetch(url, {
             method: 'POST',
             headers: {
