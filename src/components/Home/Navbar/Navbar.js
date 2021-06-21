@@ -33,8 +33,6 @@ const Navbar = () => {
             .then(data => setIsEmployer(data));
     }, [])
 
-
-    console.log(isEmployer)
     return (
         <div className="container">
             <nav class="navbar navbar-expand-lg navbar-light bg-transparent">

@@ -7,7 +7,6 @@ const Pagination = ({ jobsPerPage, totalJobs, paginate }) => {
     pageNumbers.push(i);
   }
 
-  console.log(jobsPerPage,totalJobs)
 
   return (
     <nav className="container">

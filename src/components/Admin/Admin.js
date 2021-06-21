@@ -10,7 +10,6 @@ const Admin = () => {
             .then(data => setJobData(data))
     }, [])
 
-    console.log(jobData)
 
     return (
         <div className="container text-center">

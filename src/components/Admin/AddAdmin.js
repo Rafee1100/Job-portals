@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import Navbar from '../Home/Navbar/Navbar';
 
 const AddAdmin = () => {
     const { handleSubmit } = useForm();
@@ -10,7 +11,6 @@ const AddAdmin = () => {
         };
         const url = `https://nameless-dusk-73584.herokuapp.com/addadmin`;
 
-        console.log(adminData)
         fetch(url, {
             method: 'POST',
             headers: {
@@ -29,6 +29,7 @@ const AddAdmin = () => {
 
     return (
         <div className="container">
+            <Navbar/>
             <h5>Fill the form to add an admin</h5>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div class="mb-3">

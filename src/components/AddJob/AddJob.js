@@ -32,7 +32,6 @@ const AddJob = () => {
         };
         const url = `https://nameless-dusk-73584.herokuapp.com/addApproveJob`;
 
-        console.log(jobData)
         fetch(url, {
             method: 'POST',
             headers: {
@@ -86,29 +85,6 @@ const AddJob = () => {
             });
 
     }
-
-    // const [employerData,setEmployerData]=useState([]);
-    // useEffect(()=>{
-    //     fetch(`https://nameless-dusk-73584.herokuapp.com/employer`)
-    //     .then(res=>res.json())
-    //     .then(data=>setEmployerData(data))
-    // },[])
-
-    // let [jobCounter,setJobCounter]=useState(0)
-    // for(let i=0;i<employerData.length;i++){
-    //     if(employerData[i].email===loggedInUser.email){
-    //         if(employerData[i].userSubscription==="Premium"){
-    //             setJobCounter(30);
-    //         }
-    //         else if(employerData[i].userSubscription==="Standard"){
-    //             setJobCounter(20);
-    //         }
-    //         else{
-    //             setJobCounter(10)
-    //         }
-    //     }
-    // }
-    // console.log(jobCounter)
 
     return (
         <div >

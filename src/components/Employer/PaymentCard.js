@@ -47,7 +47,6 @@ const PaymentCard = (props) => {
             payment: { ...paymentMethod }
         }
 
-        console.log(getUserInfo)
 
 
         const url = `https://nameless-dusk-73584.herokuapp.com/addemployer`;

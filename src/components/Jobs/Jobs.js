@@ -23,7 +23,6 @@ const Jobs = () => {
         setPageNumber(selected);
     };
 
-    console.log(jobs)
     return (
         <div className="mt-4 pt-4 container">
             <div>
