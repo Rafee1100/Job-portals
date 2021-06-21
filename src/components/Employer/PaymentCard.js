@@ -7,7 +7,7 @@ import Navbar from'../Home/Navbar/Navbar'
 
 const PaymentCard = (props) => {
     const { name, email } = props.data;
-    const [userSubscription, setUserSubscription] = useState(10)
+    const [userSubscription, setUserSubscription] = useState("Basic")
     const stripe = useStripe();
     const elements = useElements();
 
@@ -50,7 +50,7 @@ const PaymentCard = (props) => {
         console.log(getUserInfo)
 
 
-        const url = `https://nameless-dusk-73584.herokuapp.com/addemployer`;
+        const url = `http://localhost:8000/addemployer`;
         fetch(url, {
             method: 'POST',
             headers: {
@@ -81,8 +81,8 @@ const PaymentCard = (props) => {
                     <select class="form-select" id="inputGroupSelect01" onChange={handleChange}>
                         <option selected>{setUserSubscription}</option>
                         <option value="1">{userSubscription}</option>
-                        <option value="2">20</option>
-                        <option value="3">30</option>
+                        <option value="2">Standard</option>
+                        <option value="3">Premium</option>
                     </select>
                 </div>
                 <CardElement />

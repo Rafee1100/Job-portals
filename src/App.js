@@ -12,6 +12,10 @@ import { createContext, useState } from 'react';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import AddJob from './components/AddJob/AddJob';
 import Employer from './components/Employer/Employer';
+import JobApply from './JobApply/JobApply';
+import Navbar from './components/Home/Navbar/Navbar';
+import CheckOutJob from './JobApply/CheckOut/CheckOutJob';
+
 
 export const UserContext = createContext()
 
@@ -35,11 +39,19 @@ function App() {
               <Login />
             </Route>
             <Route path="/addjob">
-              <AddJob/>
+              <AddJob />
             </Route>
             <PrivateRoute path="/employer">
-              <Employer/>
+              <Employer />
             </PrivateRoute>
+            <PrivateRoute path ="/job/:id">
+              <Navbar/>
+              <JobApply/>
+            </PrivateRoute>
+            <Route path="/checkout/:id">
+              <Navbar/>
+              <CheckOutJob/>
+            </Route>
           </Switch>
         </Router>
       </div>

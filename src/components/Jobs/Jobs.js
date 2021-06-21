@@ -9,7 +9,7 @@ const Jobs = () => {
     const [searchTerm, setSearchTerm] = useState("");
 
     useEffect(() => {
-        fetch('https://nameless-dusk-73584.herokuapp.com/jobs')
+        fetch('http://localhost:8000/jobs')
             .then(res => res.json())
             .then(data => setJobs(data))
     }, [])
@@ -50,6 +50,7 @@ const Jobs = () => {
                         }).slice(pagesVisited, pagesVisited + usersPerPage).map(job => <JobCart job={job} key={jobs._id}></JobCart>)
                     }
                 </div>
+                <div className="mt-5">
                 <ReactPaginate
                     previousLabel={"Previous"}
                     nextLabel={"Next"}
@@ -61,6 +62,7 @@ const Jobs = () => {
                     disabledClassName={"paginationDisabled"}
                     activeClassName={"paginationActive"}
                 />
+                </div>
             </div>
         </div>
     );

@@ -14,7 +14,7 @@ const Navbar = () => {
     const { photoURL } = loggedInUser
 
     useEffect(() => {
-        fetch('https://nameless-dusk-73584.herokuapp.com/isadmin', {
+        fetch('http://localhost:8000/isadmin', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify({ email: loggedInUser.email })
@@ -24,7 +24,7 @@ const Navbar = () => {
     }, [])
 
     useEffect(() => {
-        fetch('https://nameless-dusk-73584.herokuapp.com/isemployer', {
+        fetch('http://localhost:8000/isemployer', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify({ email: loggedInUser.email })

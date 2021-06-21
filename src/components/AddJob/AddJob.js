@@ -26,7 +26,7 @@ const AddJob = () => {
             location:location,
             postedBy:postedBy
         };
-        const url = `https://nameless-dusk-73584.herokuapp.com/addJob`;
+        const url = `http://localhost:8000/addJob`;
 
         console.log(jobData)
         fetch(url, {
