@@ -7,7 +7,7 @@ const ApproveCart = (props) => {
     console.log(props.approveJob)
 
     const deleteJob = (id) => {
-        const url = `http://localhost:8000/deleteJob/${id}`
+        const url = `https://nameless-dusk-73584.herokuapp.com/deleteJob/${id}`
         fetch(url, {
             method: 'DELETE',
         })
@@ -25,7 +25,7 @@ const ApproveCart = (props) => {
             location: location,
             postedBy: postedBy,
         };
-        const url = `http://localhost:8000/addJob`;
+        const url = `https://nameless-dusk-73584.herokuapp.com/addJob`;
 
         console.log(jobData)
         fetch(url, {

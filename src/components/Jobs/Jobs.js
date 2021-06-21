@@ -9,7 +9,7 @@ const Jobs = () => {
     const [searchTerm, setSearchTerm] = useState("");
 
     useEffect(() => {
-        fetch('http://localhost:8000/jobs')
+        fetch('https://nameless-dusk-73584.herokuapp.com/jobs')
             .then(res => res.json())
             .then(data => setJobs(data))
     }, [])

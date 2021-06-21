@@ -5,7 +5,7 @@ import ApproveCart from './ApproveCart'
 const Admin = () => {
     const [jobData, setJobData] = useState([])
     useEffect(() => {
-        fetch('http://localhost:8000/approvejobs')
+        fetch('https://nameless-dusk-73584.herokuapp.com/approvejobs')
             .then(res => res.json())
             .then(data => setJobData(data))
     }, [])

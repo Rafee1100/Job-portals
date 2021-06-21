@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import './AddJob.css'
 import axios from 'axios';
 import { useForm } from "react-hook-form";
 import Navbar from '../Home/Navbar/Navbar';
+import { UserContext } from '../../App';
 
 
 const AddJob = () => {
@@ -16,6 +17,7 @@ const AddJob = () => {
     const [jobType, setJobType] = useState(null);
     const [location, setLocation] = useState(null);
     const [status,setStatus]= useState(null)
+    const [loggedInUser]=useContext(UserContext)
 
     const onSubmit = data => {
         const jobData = {
@@ -28,7 +30,7 @@ const AddJob = () => {
             postedBy: postedBy,
             status:status
         };
-        const url = `http://localhost:8000/addApproveJob`;
+        const url = `https://nameless-dusk-73584.herokuapp.com/addApproveJob`;
 
         console.log(jobData)
         fetch(url, {
@@ -84,6 +86,29 @@ const AddJob = () => {
             });
 
     }
+
+    // const [employerData,setEmployerData]=useState([]);
+    // useEffect(()=>{
+    //     fetch(`https://nameless-dusk-73584.herokuapp.com/employer`)
+    //     .then(res=>res.json())
+    //     .then(data=>setEmployerData(data))
+    // },[])
+
+    // let [jobCounter,setJobCounter]=useState(0)
+    // for(let i=0;i<employerData.length;i++){
+    //     if(employerData[i].email===loggedInUser.email){
+    //         if(employerData[i].userSubscription==="Premium"){
+    //             setJobCounter(30);
+    //         }
+    //         else if(employerData[i].userSubscription==="Standard"){
+    //             setJobCounter(20);
+    //         }
+    //         else{
+    //             setJobCounter(10)
+    //         }
+    //     }
+    // }
+    // console.log(jobCounter)
 
     return (
         <div >

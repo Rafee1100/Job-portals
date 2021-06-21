@@ -6,7 +6,7 @@ const JobApply = () => {
     const { id } = useParams()
     const [jobDes, setJobDes] = useState([])
     useEffect(() => {
-        const url = `http://localhost:8000/job/${id}`
+        const url = `https://nameless-dusk-73584.herokuapp.com/job/${id}`
         console.log(url)
         fetch(url)
             .then(res => res.json())

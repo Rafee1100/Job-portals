@@ -14,7 +14,7 @@ const Navbar = () => {
     const { photoURL } = loggedInUser
 
     useEffect(() => {
-        fetch('http://localhost:8000/isadmin', {
+        fetch('https://nameless-dusk-73584.herokuapp.com/isadmin', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify({ email: loggedInUser.email })
@@ -24,7 +24,7 @@ const Navbar = () => {
     }, [])
 
     useEffect(() => {
-        fetch('http://localhost:8000/isemployer', {
+        fetch('https://nameless-dusk-73584.herokuapp.com/isemployer', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify({ email: loggedInUser.email })
@@ -61,6 +61,9 @@ const Navbar = () => {
                                 {
                                   isEmployer ? <Link to="/addjob" className="nav-link employer-btn" >For Employer</Link>:<Link className="nav-link employer-btn" to="/employer">For Employer</Link>
                                 }
+                            </li>
+                            <li class="nav-item me-3">
+                                {isAdmin ? <Link class="nav-link"  to="/admin">Admin Dashboard</Link>:null}
                             </li>
                         </ul>
                     </div>
